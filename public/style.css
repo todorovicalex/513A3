@@ -1,0 +1,113 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body{
+    background-color: white;
+}
+
+footer > form input { 
+    border: 0; 
+    padding: 10px; 
+    width: 90%; 
+    margin-right: .5%; 
+}
+
+footer > form button { 
+    width: 9%; 
+    background: rgb(130, 224, 255); 
+    border: none; 
+    padding: 10px; 
+}
+
+#nickWrap{
+    border: 10;
+    padding: 10px;
+    width: 20%;
+}
+
+#messages {
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0;
+}
+
+#messages li { 
+    padding: 5px 10px;
+}
+
+#messages li:nth-child(odd) { 
+    background: #eee; 
+}
+
+#contentWrap{
+    display: none;
+} 
+
+#main {
+    min-height: 850px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-flow: row;
+}
+
+#main > article {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #4a5972;
+    border-radius: 7pt;
+    background: #42474f;
+    flex: 3 1 60%;
+    order: 2;
+    align-self: flex-end;  
+}
+
+.scrollable{
+    height: 840px;
+    overflow-y: auto;
+}
+
+#main > nav {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #8888bb;
+    border-radius: 7pt;
+    background: #ccccff;
+    flex: 1 6 20%;
+    order: 1;
+}
+
+#main > aside {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #8888bb;
+    border-radius: 7pt;
+    background: #ccccff;
+    flex: 1 6 20%;
+    order: 3;
+}
+
+footer {
+    display: block;
+    margin: 4px;
+    padding: 5px;
+    min-height: 50px;
+    border-radius: 7pt;
+    background: #6e4094;
+}
+
+/* Too narrow to support three columns */
+@media all and (max-width: 640px) {
+    #main, #page {
+        flex-direction: column;
+    }
+
+    #main > article, #main > nav, #main > aside {
+    /* Return them to document order */
+        order: 0;
+    }
+
+    #main > nav, #main > aside, header, footer {
+        min-height: 50px;
+        max-height: 50px;
+    }
+}
